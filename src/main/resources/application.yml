@@ -1,6 +1,40 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /blog
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3309/blog?serverTimezone=Asia/Seoul
     username: khj
     password: 357951
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      #서버 시작시마다 DB초기화
+      ddl-auto: create
+      naming:
+        #Entity를 만들 때 변수명 그대로 DB에 필드를 만들어 준다.
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      #jpa의 기본 넘버링 전략을 안한다.
+      use-new-id-generator-mappings: false
+    #Console창에 보여준다.
+    show-sql: true
+    properties:
+      #Console창에 보여줄때 한줄이아닌 여러줄로 나오게 한다.
+      hibernate.format_sql: true
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
