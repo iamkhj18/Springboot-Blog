@@ -23,7 +23,7 @@ spring:
     open-in-view: true
     hibernate:
       #서버 시작시마다 DB초기화
-      ddl-auto: create
+      ddl-auto: update
       naming:
         #Entity를 만들 때 변수명 그대로 DB에 필드를 만들어 준다.
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
