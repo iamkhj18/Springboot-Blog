@@ -10,3 +10,7 @@ import com.khj.blog.model.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	
 }
+
+//JPA Naming 쿼리
+// SELECT * FROM user WHERE username = ? AND password = ?;
+// User findByUsernameAndPassword(String username, String password);
