@@ -1,8 +1,8 @@
 package com.khj.blog.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,9 +22,9 @@ public class BoardService {
 		board.setUser(user);
 		boardRepository.save(board);
 	}
-	
-	public List<Board> 글목록(){
-		return boardRepository.findAll();
+
+	public Page<Board> 글목록(Pageable pageable) {
+		return boardRepository.findAll(pageable);
 	}
 
 }
