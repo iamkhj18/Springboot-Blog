@@ -8,12 +8,12 @@
 	
 	  <div class="form-group">
 	    <label for="username">Username</label>
-	    <input type="text" name="username" class="form-control" placeholder="Enter username" id="username">
+	    <input type="text" name="username" class="form-control" placeholder="Enter username" id="username" value="admin">
 	  </div>
 	  
 	  <div class="form-group">
 	    <label for="password">Password</label>
-	    <input type="password" name="password" class="form-control" placeholder="Enter password" id="password">
+	    <input type="password" name="password" class="form-control" placeholder="Enter password" id="password" value="1234">
 	  </div>
 	  
 	  <button id="btn-login" class="btn btn-primary">로그인</button>
